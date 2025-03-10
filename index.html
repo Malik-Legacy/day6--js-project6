@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>electricity counter</title>
+    <style>
+        #box{
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            width: 900px;
+            margin-left: 15%;
+            height: 390px;
+            background-color: grey;
+            display: none;
+        }
+        #box2{
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            width: 900px;
+            margin-left: 15%;
+            height: 390px;
+            background-color: grey;
+            display: block;
+        }
+        #box3{
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            width: 900px;
+            margin-left: 15%;
+            height: 30px;
+            background-color: grey;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <h3 id="title">electricity bill calculator (Domestic)</h3>
+        <h4>Harayana</h4>
+        <br>
+        <input type="number" id="i3">
+        <button id="i2" onclick="cal()">Caluclate</button>
+        <br>
+        <br>
+        <img src="i1.png" alt="rates">
+        <span>Total rs:</span><h4 id="o">0</h4>
+       </div>
+       <div id="box2">
+        <h3 id="title2">electricity bill calculator (Comercial)</h3>
+        <h4>Harayana</h4>
+        <br>
+        <input type="number" id="i5">
+        <button id="i4" onclick="cal2()">Caluclate</button>
+        <br>
+        <br>
+        <img src="i2.png" alt="rates">
+        <span>Total rs:</span><h4 id="o2">0</h4>
+       </div>
+       <div id="box3">
+       <button id="b1" onclick="d()">Domestic</button>
+       <button id="b2" onclick="d2()">Comercial</button>
+    </div>
+    <script>
+        function cal(){
+         let x =parseInt(document.getElementById("i3").value)
+            if(x <= 100){
+             y = x*4
+                document.getElementById("o").innerHTML = y
+            }
+            else if(x <= 200){
+                x= x -100
+                z= (x*6) + 400
+                document.getElementById("o").innerHTML = z
+            }
+            else if(x <= 400){
+                x= x -200
+                z= (x*6.8) + 1000
+                document.getElementById("o").innerHTML = z
+            }
+            else{
+                x= x -400
+                z= (x*7.5) + 2360
+                document.getElementById("o").innerHTML = z
+            }
+        }
+        function cal2(){
+         let x =parseInt(document.getElementById("i5").value)
+            if(x <= 100){
+             y = x*7
+                document.getElementById("o2").innerHTML = y
+            }
+            else if(x <= 200){
+                x= x -100
+                z= (x*9) + 700
+                document.getElementById("o2").innerHTML = z
+            }
+            else if(x <= 400){
+                x= x -200
+                z= (x*10) + 1600
+                document.getElementById("o2").innerHTML = z
+            }
+            else{
+                x= x -400
+                z= (x*11.5) + 3600
+                document.getElementById("o2").innerHTML = z
+            }
+        }
+        function d(){
+            document.getElementById("box").style.display="block";
+            document.getElementById("box2").style.display="none";
+        }
+        function d2(){
+            document.getElementById("box").style.display="none";
+            document.getElementById("box2").style.display="block";
+        }
+    </script>
+</body>
+</html>
